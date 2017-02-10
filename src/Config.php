@@ -7,7 +7,7 @@ use PhpCsFixer\Finder;
 class Config extends \PhpCsFixer\Config
 {
     /**
-     * Create a new MWL configuration
+     * Create a new MWL configuration.
      */
     public function __construct()
     {
@@ -29,6 +29,7 @@ class Config extends \PhpCsFixer\Config
                 'linebreak_after_opening_tag' => true,
                 'mb_str_functions' => true,
                 'modernize_types_casting' => true,
+                'native_function_invocation' => false,
                 'no_blank_lines_before_namespace' => false,
                 'no_multiline_whitespace_before_semicolons' => true,
                 'no_php4_constructor' => true,
@@ -52,6 +53,7 @@ class Config extends \PhpCsFixer\Config
                 'simplified_null_return' => true,
                 'strict_comparison' => true,
                 'strict_param' => true,
+                'ternary_to_null_coalescing' => true,
             ]);
     }
 
@@ -68,7 +70,7 @@ class Config extends \PhpCsFixer\Config
     }
 
     /**
-     * Merge a set of rules with the core ones
+     * Merge a set of rules with the core ones.
      *
      * @param array $rules
      *
