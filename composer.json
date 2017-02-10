@@ -1,0 +1,19 @@
+{
+    "name": "madewithlove/php-cs-fixer-config",
+    "description": "Prebuilt PHP CS Fixer configuration for Madewithlove projects",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Madewithlove",
+            "email": "heroes@madewithlove.be"
+        }
+    ],
+    "require": {
+        "friendsofphp/php-cs-fixer": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Madewithlove\\PhpCsFixer\\": "src"
+        }
+    }
+}
