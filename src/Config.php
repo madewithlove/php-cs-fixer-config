@@ -2,6 +2,9 @@
 
 namespace Madewithlove\PhpCsFixer;
 
+use PhpCsFixer\ConfigInterface;
+use PhpCsFixer\Finder;
+
 class Config extends \PhpCsFixer\Config
 {
     /**
@@ -38,7 +41,7 @@ class Config extends \PhpCsFixer\Config
                 'not_operator_with_successor_space' => false,
                 'ordered_class_elements' => false,
                 'ordered_imports' => true,
-                'php_unit_strict' => true,
+                'php_unit_strict' => false,
                 'phpdoc_add_missing_param_annotation' => true,
                 'phpdoc_order' => true,
                 'pow_to_exponentiation' => true,
@@ -51,5 +54,32 @@ class Config extends \PhpCsFixer\Config
                 'strict_comparison' => true,
                 'strict_param' => true,
             ]);
+    }
+
+    /**
+     * @param string|string[] $folders
+     *
+     * @return $this
+     */
+    public static function fromFolders($folders)
+    {
+        return static::create()->setFinder(
+            Finder::create()->in($folders)
+        );
+    }
+
+    /**
+     * Merge a set of rules with the core ones
+     *
+     * @param array $rules
+     *
+     * @return $this
+     */
+    public function mergeRules(array $rules)
+    {
+        return $this->setRules(array_merge(
+            $this->getRules(),
+            $rules
+        ));
     }
 }

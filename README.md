@@ -14,7 +14,7 @@ $ composer require madewithlove/php-cs-fixer-config
 <?php
 require 'vendor/autoload.php';
 
-return Madewithlove\PhpCsFixer\Config::create()->setFinder(
-    PhpCsFixer\Finder::create()->in(['src'])
-);
+return Madewithlove\PhpCsFixer\Config::fromFolders(['src'])->mergeRules([
+    'php_unit_strict' => false,
+]);
 ```
