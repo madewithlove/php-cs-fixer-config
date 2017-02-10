@@ -2,7 +2,6 @@
 
 namespace Madewithlove\PhpCsFixer;
 
-use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
 
 class Config extends \PhpCsFixer\Config
