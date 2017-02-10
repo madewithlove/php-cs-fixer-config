@@ -8,7 +8,8 @@ $ composer require madewithlove/php-cs-fixer-config
 
 ## Usage
 
-**.php_cs
+**.php_cs**
+
 ```php
 <?php
 require 'vendor/autoload.php';
