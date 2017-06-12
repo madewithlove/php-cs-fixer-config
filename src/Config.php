@@ -13,7 +13,7 @@ class Config extends \PhpCsFixer\Config
     {
         parent::__construct('madewithlove');
 
-        $isPhp7 = version_compare(PHP_VERSION, '7.0.0');
+        $isPhp7 = (bool) version_compare(PHP_VERSION, '7.0.0');
 
         $this
             ->setRiskyAllowed(true)
@@ -39,7 +39,7 @@ class Config extends \PhpCsFixer\Config
                 'no_unreachable_default_argument_value' => true,
                 'no_useless_else' => true,
                 'no_useless_return' => true,
-                'list_syntax' => version_compare(PHP_VERSION, '7.1.0'),
+                'list_syntax' => ['syntax' => version_compare(PHP_VERSION, '7.1.0') ? 'short' : 'long'],
                 'not_operator_with_space' => false,
                 'not_operator_with_successor_space' => false,
                 'ordered_class_elements' => false,
