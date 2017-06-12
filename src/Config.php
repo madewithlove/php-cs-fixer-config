@@ -35,7 +35,7 @@ class Config extends \PhpCsFixer\Config
                 'no_blank_lines_before_namespace' => false,
                 'no_multiline_whitespace_before_semicolons' => true,
                 'no_php4_constructor' => true,
-                'no_short_echo_tag' => true,
+                'no_short_echo_tag' => false,
                 'no_unreachable_default_argument_value' => true,
                 'no_useless_else' => true,
                 'no_useless_return' => true,
