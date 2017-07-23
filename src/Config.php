@@ -25,6 +25,7 @@ class Config extends \PhpCsFixer\Config
         'null_coalescing' => '7.0',
         'short_array' => '5.4',
         'short_list' => '7.1',
+        'void_return' => '7.1',
     ];
 
     /**
@@ -84,7 +85,7 @@ class Config extends \PhpCsFixer\Config
                 'strict_comparison' => true,
                 'strict_param' => true,
                 'ternary_to_null_coalescing' => $this->supports('null_coalescing'),
-                'void_return' => true,
+                'void_return' => $this->supports('void_return'),
             ]);
     }
 
