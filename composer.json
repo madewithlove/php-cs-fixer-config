@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "friendsofphp/php-cs-fixer": "^2.3"
+        "friendsofphp/php-cs-fixer": "^2.4"
     },
     "autoload": {
         "psr-4": {
