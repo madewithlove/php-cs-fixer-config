@@ -146,6 +146,6 @@ class Config extends \PhpCsFixer\Config
             return true;
         }
 
-        return (bool) version_compare($this->target, $this->fixerPerVersion[$fixer]);
+        return version_compare($this->target, $this->fixerPerVersion[$fixer]) !== -1;
     }
 }
