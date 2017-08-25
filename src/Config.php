@@ -116,7 +116,7 @@ class Config extends \PhpCsFixer\Config
     public static function forLaravel($folders = [], $target = null)
     {
         $folders = (array) $folders;
-        $folders = array_merge(['app', 'bootstrap', 'config', 'database', 'routes', 'tests'], $folders);
+        $folders = array_merge(['app', 'config', 'database', 'routes', 'tests'], $folders);
 
         return static::fromFolders($folders, $target);
     }
