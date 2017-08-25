@@ -34,6 +34,30 @@ return Madewithlove\PhpCsFixer\Config::fromFolders(['src'])->mergeRules([
 ]);
 ```
 
+### Usage within a Laravel project
+
+You can also preconfigure the configuration for a Laravel project by calling a special factory method:
+
+**.php_cs**
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+return Madewithlove\PhpCsFixer\Config::forLaravel();
+```
+
+If need be, you can also append folders to fix in addition to Laravel's:
+
+**.php_cs**
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+return Madewithlove\PhpCsFixer\Config::forLaravel(['some_other_folder']);
+```
+
 ### Targeting a specific PHP version
 
 By default the configuration will check the version of PHP you run the tool with, and proceed to enable/disable fixers depending on it. 
@@ -48,4 +72,7 @@ You can override the _target_ PHP version by passing it either as constructor ar
 require 'vendor/autoload.php';
 
 return Madewithlove\PhpCsFixer\Config::fromFolders(['src'], '7.0.4');
+
+// Or
+return Madewithlove\PhpCsFixer\Config::forLaravel([], '7.0.4');
 ```

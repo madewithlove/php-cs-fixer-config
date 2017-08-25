@@ -108,6 +108,20 @@ class Config extends \PhpCsFixer\Config
     }
 
     /**
+     * @param string|string[] $folders
+     * @param string|null     $target
+     *
+     * @return $this
+     */
+    public static function forLaravel($folders = [], $target = null)
+    {
+        $folders = (array) $folders;
+        $folders = array_merge(['app', 'bootstrap', 'config', 'database', 'routes', 'tests'], $folders);
+
+        return static::fromFolders($folders, $target);
+    }
+
+    /**
      * Merge a set of rules with the core ones.
      *
      * @param array $rules
