@@ -99,6 +99,7 @@ class Config extends \PhpCsFixer\Config
                 'strict_param' => true,
                 'ternary_to_null_coalescing' => $this->supports('null_coalescing'),
                 'void_return' => $this->supports('void_return'),
+                'yoda_style' => false,
             ]);
     }
 
