@@ -187,13 +187,11 @@ class Config extends \PhpCsFixer\Config
         return $this->mergeRules([
             'php_unit_dedicate_assert' => true,
             'php_unit_expectation' => true,
-            'php_unit_internal_class' => true,
             'php_unit_mock' => true,
             'php_unit_namespaced' => true,
             'php_unit_no_expectation_annotation' => true,
             'php_unit_strict' => true,
             'php_unit_test_annotation' => true,
-            'php_unit_test_class_requires_covers' => true,
         ]);
     }
 
