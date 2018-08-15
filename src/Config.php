@@ -20,12 +20,12 @@ class Config extends \PhpCsFixer\Config
      * @var array
      */
     protected $fixerPerVersion = [
+        'short_array' => '5.4',
         'class_keyword' => '5.5',
-        'explicit_indirect_variable' => '7.0',
         'exponentiation' => '5.6',
+        'explicit_indirect_variable' => '7.0',
         'null_coalescing' => '7.0',
         'type_annotations' => '7.0',
-        'short_array' => '5.4',
         'short_list' => '7.1',
         'void_return' => '7.1',
     ];
