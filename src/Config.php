@@ -155,15 +155,16 @@ class Config extends \PhpCsFixer\Config
     /**
      * @param string|string[] $folders
      * @param string|null     $target
+     * @param string|string[] $exclude folder to exclude
      *
      * @return $this
      */
-    public static function fromFolders($folders, $target = null)
+    public static function fromFolders($folders, $target = null, $exclude = [])
     {
         $config = new static($target);
 
         return $config->setFinder(
-            Finder::create()->in($folders)
+            Finder::create()->in($folders)->exclude($exclude)
         );
     }
 

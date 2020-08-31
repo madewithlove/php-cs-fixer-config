@@ -21,6 +21,16 @@ require 'vendor/autoload.php';
 return Madewithlove\PhpCsFixer\Config::fromFolders(['src']);
 ```
 
+To exclude a subfolder:
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+return Madewithlove\PhpCsFixer\Config::fromFolders(['src'], null, ['ignoreThisDir']);
+```
+This will skip `src/ignoreThisDir` or `src/foo/bar/ignoreThisDir`. (_The folder has to be relative to the ones in the first argument._)
+
 You can also override rules per-project without overriding the core rules like this:
 
 **.php_cs**
