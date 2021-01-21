@@ -17,6 +17,7 @@
         }
     },
     "scripts": {
+        "check-linting": "vendor/bin/php-cs-fixer fix --dry-run -vvv",
         "lint": "php-cs-fixer fix"
     }
 }
