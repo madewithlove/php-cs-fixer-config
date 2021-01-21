@@ -8,18 +8,16 @@ class Config extends \PhpCsFixer\Config
 {
     /**
      * The PHP version of the application.
-     *
-     * @var string
      */
-    protected $target;
+    protected string $target;
 
     /**
      * An array of what version is required
      * for a each syntax fixer.
      *
-     * @var array
+     * @var array<string,string>
      */
-    protected $fixerPerVersion = [
+    protected array $fixerPerVersion = [
         'short_array' => '5.4',
         'class_keyword' => '5.5',
         'exponentiation' => '5.6',
@@ -38,10 +36,8 @@ class Config extends \PhpCsFixer\Config
      * Commented out lines are deprecated rules,
      * they're kept here for easier updates to the config
      * when PCF updates.
-     *
-     * @param string|null $target
      */
-    public function __construct($target = null)
+    public function __construct(?string $target = null)
     {
         parent::__construct('madewithlove');
 
@@ -153,13 +149,10 @@ class Config extends \PhpCsFixer\Config
     }
 
     /**
-     * @param string|string[] $folders
-     * @param string|null     $target
-     * @param string|string[] $exclude folder to exclude
-     *
-     * @return $this
+     * @param string[] $folders
+     * @param string[] $exclude folder to exclude
      */
-    public static function fromFolders($folders, $target = null, $exclude = [])
+    public static function fromFolders(array $folders, ?string $target = null, array $exclude = []): self
     {
         $config = new static($target);
 
@@ -169,12 +162,9 @@ class Config extends \PhpCsFixer\Config
     }
 
     /**
-     * @param string|string[] $folders
-     * @param string|null     $target
-     *
-     * @return $this
+     * @param string[] $folders
      */
-    public static function forLaravel($folders = [], $target = null)
+    public static function forLaravel(array $folders = [], ?string $target = null): self
     {
         $folders = (array) $folders;
         $folders = array_merge(['app', 'config', 'database', 'routes', 'tests'], $folders);
@@ -184,10 +174,8 @@ class Config extends \PhpCsFixer\Config
 
     /**
      * Merge a set of rules with the core ones.
-     *
-     * @return $this
      */
-    public function mergeRules(array $rules)
+    public function mergeRules(array $rules): self
     {
         return $this->setRules(array_merge(
             $this->getRules(),
@@ -195,10 +183,7 @@ class Config extends \PhpCsFixer\Config
         ));
     }
 
-    /**
-     * @return $this
-     */
-    public function enablePhpunitRules()
+    public function enablePhpunitRules(): self
     {
         return $this->mergeRules([
             'php_unit_dedicate_assert' => true,
@@ -215,24 +200,14 @@ class Config extends \PhpCsFixer\Config
     /////////////////////////////////// HELPERS ////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * @param string $fixer
-     *
-     * @return array
-     */
-    protected function getSupportedSyntax($fixer)
+    protected function getSupportedSyntax(string $fixer): array
     {
         $syntax = $this->supports($fixer) ? 'short' : 'long';
 
         return compact('syntax');
     }
 
-    /**
-     * @param string $fixer
-     *
-     * @return bool
-     */
-    protected function supports($fixer)
+    protected function supports(string $fixer): bool
     {
         if (!isset($this->fixerPerVersion[$fixer])) {
             return true;

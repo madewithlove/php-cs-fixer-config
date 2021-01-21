@@ -1,4 +1,4 @@
 <?php
 require 'vendor/autoload.php';
 
-return Madewithlove\PhpCsFixer\Config::fromFolders('src', '5.6');
+return Madewithlove\PhpCsFixer\Config::fromFolders(['src']);
