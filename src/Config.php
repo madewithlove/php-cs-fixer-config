@@ -150,7 +150,6 @@ class Config extends \PhpCsFixer\Config
 
     /**
      * @param string[] $folders
-     * @param string|null $target
      * @param string[] $exclude folder to exclude
      */
     public static function fromFolders(array $folders, ?string $target = null, array $exclude = []): self
@@ -164,7 +163,6 @@ class Config extends \PhpCsFixer\Config
 
     /**
      * @param string[] $folders
-     * @param string|null $target
      */
     public static function forLaravel(array $folders = [], ?string $target = null): self
     {
