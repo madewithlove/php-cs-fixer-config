@@ -70,8 +70,7 @@ return Madewithlove\PhpCsFixer\Config::forLaravel(['some_other_folder']);
 
 ### Targeting a specific PHP version
 
-By default the configuration will check the version of PHP you run the tool with, and proceed to enable/disable fixers depending on it. 
-Per example if you're using a version of PHP that supports short arrays, it will convert them all to it. Whereas if you're using PHP 5.3 it will convert them to long arrays.
+By default, the configuration will check the version of PHP you run the tool with, and proceed to enable/disable fixers depending on it. 
 
 You can override the _target_ PHP version by passing it either as constructor argument, or as second argument to `fromFolders`:
 
@@ -81,8 +80,8 @@ You can override the _target_ PHP version by passing it either as constructor ar
 <?php
 require 'vendor/autoload.php';
 
-return Madewithlove\PhpCsFixer\Config::fromFolders(['src'], '7.0.4');
+return Madewithlove\PhpCsFixer\Config::fromFolders(['src'], '7.4');
 
 // Or
-return Madewithlove\PhpCsFixer\Config::forLaravel([], '7.0.4');
+return Madewithlove\PhpCsFixer\Config::forLaravel([], '7.4');
 ```
