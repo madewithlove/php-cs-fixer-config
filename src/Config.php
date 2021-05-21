@@ -12,25 +12,6 @@ class Config extends \PhpCsFixer\Config
     protected string $target;
 
     /**
-     * An array of what version is required
-     * for a each syntax fixer.
-     *
-     * @var array<string,string>
-     */
-    protected array $fixerPerVersion = [
-        'short_array' => '5.4',
-        'class_keyword' => '5.5',
-        'exponentiation' => '5.6',
-        'dirname_level' => '7.0',
-        'explicit_indirect_variable' => '7.0',
-        'null_coalescing' => '7.0',
-        'type_annotations' => '7.0',
-        'short_list' => '7.1',
-        'void_return' => '7.1',
-        'heredoc_indentation' => '7.3',
-    ];
-
-    /**
      * Create a new MWL configuration.
      *
      * Commented out lines are deprecated rules,
@@ -49,12 +30,11 @@ class Config extends \PhpCsFixer\Config
                 '@Symfony' => true,
                 'align_multiline_comment' => true,
                 'array_indentation' => true,
-                'array_syntax' => $this->getSupportedSyntax('short_array'),
+                'array_syntax' => ['syntax' => 'short'],
                 'backtick_to_shell_exec' => true,
-                'class_keyword_remove' => !$this->supports('class_keyword'),
                 'combine_consecutive_issets' => true,
                 'combine_consecutive_unsets' => true,
-                'combine_nested_dirname' => $this->supports('dirname_level'),
+                'combine_nested_dirname' => true,
                 'comment_to_phpdoc' => true,
                 'compact_nullable_typehint' => true,
                 'date_time_immutable' => false,
@@ -64,7 +44,7 @@ class Config extends \PhpCsFixer\Config
                 'doctrine_annotation_indentation' => true,
                 'doctrine_annotation_spaces' => true,
                 'escape_implicit_backslashes' => true,
-                'explicit_indirect_variable' => $this->supports('explicit_indirect_variable'),
+                'explicit_indirect_variable' => true,
                 'explicit_string_variable' => true,
                 'final_class' => false,
                 'final_internal_class' => false,
@@ -74,10 +54,10 @@ class Config extends \PhpCsFixer\Config
                 'general_phpdoc_annotation_remove' => false,
                 'global_namespace_import' => true,
                 'header_comment' => false,
-                'heredoc_indentation' => $this->supports('heredoc_indentation'),
+                'heredoc_indentation' => true,
                 'heredoc_to_nowdoc' => false,
                 'linebreak_after_opening_tag' => true,
-                'list_syntax' => $this->getSupportedSyntax('short_list'),
+                'list_syntax' => ['syntax' => 'short'],
                 'logical_operators' => true,
                 'mb_str_functions' => true,
                 'method_chaining_indentation' => true,
@@ -120,9 +100,8 @@ class Config extends \PhpCsFixer\Config
                 'phpdoc_no_empty_return' => true,
                 'phpdoc_order' => true,
                 'phpdoc_to_param_type' => false,
-                'phpdoc_to_return_type' => $this->supports('type_annotations'),
+                'phpdoc_to_return_type' => true,
                 'phpdoc_var_annotation_correct_order' => true,
-                'pow_to_exponentiation' => $this->supports('exponentiation'),
                 'protected_to_private' => false,
                 'psr0' => true,
                 'random_api_migration' => false,
@@ -134,8 +113,8 @@ class Config extends \PhpCsFixer\Config
                 'strict_comparison' => true,
                 'strict_param' => true,
                 'string_line_ending' => true,
-                'ternary_to_null_coalescing' => $this->supports('null_coalescing'),
-                'void_return' => $this->supports('void_return'),
+                'ternary_to_null_coalescing' => true,
+                'void_return' => true,
                 'yoda_style' => false,
             ]);
     }
@@ -186,25 +165,5 @@ class Config extends \PhpCsFixer\Config
             'php_unit_namespaced' => true,
             'php_unit_no_expectation_annotation' => true,
         ]);
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////// HELPERS ////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////
-
-    protected function getSupportedSyntax(string $fixer): array
-    {
-        $syntax = $this->supports($fixer) ? 'short' : 'long';
-
-        return compact('syntax');
-    }
-
-    protected function supports(string $fixer): bool
-    {
-        if (!isset($this->fixerPerVersion[$fixer])) {
-            return true;
-        }
-
-        return version_compare($this->target, $this->fixerPerVersion[$fixer]) !== -1;
     }
 }
