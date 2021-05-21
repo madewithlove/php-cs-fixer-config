@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Madewithlove\PhpCsFixer;
 
 use PhpCsFixer\Finder;
