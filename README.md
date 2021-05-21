@@ -12,7 +12,7 @@ $ composer require madewithlove/php-cs-fixer-config
 
 ### Basic usage
 
-**.php_cs**
+**.php-cs-fixer.php**
 
 ```php
 <?php
@@ -33,7 +33,7 @@ This will skip `src/ignoreThisDir` or `src/foo/bar/ignoreThisDir`. (_The folder 
 
 You can also override rules per-project without overriding the core rules like this:
 
-**.php_cs**
+**.php-cs-fixer.php**
 
 ```php
 <?php
@@ -48,7 +48,7 @@ return Madewithlove\PhpCsFixer\Config::fromFolders(['src'])->mergeRules([
 
 You can also preconfigure the configuration for a Laravel project by calling a special factory method:
 
-**.php_cs**
+**.php-cs-fixer.php**
 
 ```php
 <?php
@@ -59,7 +59,7 @@ return Madewithlove\PhpCsFixer\Config::forLaravel();
 
 If need be, you can also append folders to fix in addition to Laravel's:
 
-**.php_cs**
+**.php-cs-fixer.php**
 
 ```php
 <?php
@@ -74,7 +74,7 @@ By default, the configuration will check the version of PHP you run the tool wit
 
 You can override the _target_ PHP version by passing it either as constructor argument, or as second argument to `fromFolders`:
 
-**.php_cs**
+**.php-cs-fixer.php**
 
 ```php
 <?php
