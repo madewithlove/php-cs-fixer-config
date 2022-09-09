@@ -68,7 +68,6 @@ class Config extends \PhpCsFixer\Config
      */
     public static function forLaravel(array $folders = [], ?string $target = null): ConfigInterface
     {
-        $folders = (array) $folders;
         $folders = array_merge(['app', 'config', 'database', 'routes', 'tests'], $folders);
 
         return static::fromFolders($folders, $target);
