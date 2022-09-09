@@ -50,6 +50,7 @@ class Config extends \PhpCsFixer\Config
                 'strict_param' => true,
                 'single_quote' => true,
                 'trailing_comma_in_multiline' => ['elements' => ['arrays']],
+                'trim_array_spaces' => true,
             ]);
     }
 
