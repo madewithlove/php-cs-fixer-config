@@ -41,6 +41,7 @@ class Config extends \PhpCsFixer\Config
                 'no_superfluous_phpdoc_tags' => true,
                 'no_trailing_comma_in_singleline_array' => true,
                 'no_unused_imports' => true,
+                'no_useless_return' => true,
                 'phpdoc_no_useless_inheritdoc' => true,
                 'phpdoc_var_without_name' => true,
                 'php_unit_method_casing' => false,
