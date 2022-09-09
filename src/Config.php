@@ -32,6 +32,7 @@ class Config extends \PhpCsFixer\Config
             ->setRules([
                 '@PSR12' => true,
                 'array_syntax' => ['syntax' => 'short'],
+                'cast_spaces' => true,
                 'concat_space' => ['spacing' => 'one'],
                 'declare_strict_types' => true,
                 'modernize_types_casting' => true,
