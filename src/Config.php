@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Madewithlove\PhpCsFixer;
 
+use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
 
 class Config extends \PhpCsFixer\Config
@@ -53,7 +54,7 @@ class Config extends \PhpCsFixer\Config
      * @param string[] $folders
      * @param string[] $exclude folder to exclude
      */
-    public static function fromFolders(array $folders, ?string $target = null, array $exclude = []): self
+    public static function fromFolders(array $folders, ?string $target = null, array $exclude = []): ConfigInterface
     {
         $config = new static($target);
 
@@ -65,7 +66,7 @@ class Config extends \PhpCsFixer\Config
     /**
      * @param string[] $folders
      */
-    public static function forLaravel(array $folders = [], ?string $target = null): self
+    public static function forLaravel(array $folders = [], ?string $target = null): ConfigInterface
     {
         $folders = (array) $folders;
         $folders = array_merge(['app', 'config', 'database', 'routes', 'tests'], $folders);
@@ -76,7 +77,7 @@ class Config extends \PhpCsFixer\Config
     /**
      * Merge a set of rules with the core ones.
      */
-    public function mergeRules(array $rules): self
+    public function mergeRules(array $rules): ConfigInterface
     {
         return $this->setRules(array_merge(
             $this->getRules(),
@@ -84,7 +85,7 @@ class Config extends \PhpCsFixer\Config
         ));
     }
 
-    public function enablePhpunitRules(): self
+    public function enablePhpunitRules(): ConfigInterface
     {
         return $this->mergeRules([
             'php_unit_dedicate_assert' => true,
