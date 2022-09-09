@@ -42,6 +42,7 @@ class Config extends \PhpCsFixer\Config
                 'no_trailing_comma_in_singleline_array' => true,
                 'no_unused_imports' => true,
                 'no_useless_return' => true,
+                'no_whitespace_before_comma_in_array' => true,
                 'object_operator_without_whitespace' => true,
                 'phpdoc_no_useless_inheritdoc' => true,
                 'phpdoc_var_without_name' => true,
