@@ -30,22 +30,22 @@ class Config extends \PhpCsFixer\Config
             ->setRiskyAllowed(true)
             ->setRules([
                 '@PSR12' => true,
-                'strict_param' => true,
                 'array_syntax' => ['syntax' => 'short'],
-                'php_unit_method_casing' => false,
-                'trailing_comma_in_multiline' => ['elements' => ['arrays']],
-                'no_trailing_comma_in_singleline_array' => true,
-                'no_unused_imports' => true,
                 'concat_space' => ['spacing' => 'one'],
+                'declare_strict_types' => true,
                 'modernize_types_casting' => true,
-                'no_superfluous_phpdoc_tags' => true,
-                'phpdoc_no_useless_inheritdoc' => true,
-                'phpdoc_var_without_name' => true,
-                'protected_to_private' => true,
-                'single_quote' => true,
                 'no_empty_comment' => true,
                 'no_empty_phpdoc' => true,
-                'declare_strict_types' => true,
+                'no_superfluous_phpdoc_tags' => true,
+                'no_trailing_comma_in_singleline_array' => true,
+                'no_unused_imports' => true,
+                'phpdoc_no_useless_inheritdoc' => true,
+                'phpdoc_var_without_name' => true,
+                'php_unit_method_casing' => false,
+                'protected_to_private' => true,
+                'strict_param' => true,
+                'single_quote' => true,
+                'trailing_comma_in_multiline' => ['elements' => ['arrays']],
             ]);
     }
 
