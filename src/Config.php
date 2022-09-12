@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Madewithlove\PhpCsFixer;
 
+use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
 
 class Config extends \PhpCsFixer\Config
@@ -30,22 +31,28 @@ class Config extends \PhpCsFixer\Config
             ->setRiskyAllowed(true)
             ->setRules([
                 '@PSR12' => true,
-                'strict_param' => true,
                 'array_syntax' => ['syntax' => 'short'],
-                'php_unit_method_casing' => false,
-                'trailing_comma_in_multiline' => ['elements' => ['arrays']],
-                'no_trailing_comma_in_singleline_array' => true,
-                'no_unused_imports' => true,
+                'cast_spaces' => true,
                 'concat_space' => ['spacing' => 'one'],
+                'declare_strict_types' => true,
                 'modernize_types_casting' => true,
-                'no_superfluous_phpdoc_tags' => true,
-                'phpdoc_no_useless_inheritdoc' => true,
-                'phpdoc_var_without_name' => true,
-                'protected_to_private' => true,
-                'single_quote' => true,
                 'no_empty_comment' => true,
                 'no_empty_phpdoc' => true,
-                'declare_strict_types' => true,
+                'no_superfluous_phpdoc_tags' => true,
+                'no_trailing_comma_in_singleline_array' => true,
+                'no_unused_imports' => true,
+                'no_useless_return' => true,
+                'no_whitespace_before_comma_in_array' => true,
+                'object_operator_without_whitespace' => true,
+                'phpdoc_no_useless_inheritdoc' => true,
+                'phpdoc_var_without_name' => true,
+                'php_unit_method_casing' => false,
+                'protected_to_private' => true,
+                'strict_param' => true,
+                'single_quote' => true,
+                'trailing_comma_in_multiline' => ['elements' => ['arrays']],
+                'trim_array_spaces' => true,
+                'whitespace_after_comma_in_array' => true,
             ]);
     }
 
@@ -53,7 +60,7 @@ class Config extends \PhpCsFixer\Config
      * @param string[] $folders
      * @param string[] $exclude folder to exclude
      */
-    public static function fromFolders(array $folders, ?string $target = null, array $exclude = []): self
+    public static function fromFolders(array $folders, ?string $target = null, array $exclude = []): ConfigInterface
     {
         $config = new static($target);
 
@@ -65,9 +72,8 @@ class Config extends \PhpCsFixer\Config
     /**
      * @param string[] $folders
      */
-    public static function forLaravel(array $folders = [], ?string $target = null): self
+    public static function forLaravel(array $folders = [], ?string $target = null): ConfigInterface
     {
-        $folders = (array) $folders;
         $folders = array_merge(['app', 'config', 'database', 'routes', 'tests'], $folders);
 
         return static::fromFolders($folders, $target);
@@ -76,7 +82,7 @@ class Config extends \PhpCsFixer\Config
     /**
      * Merge a set of rules with the core ones.
      */
-    public function mergeRules(array $rules): self
+    public function mergeRules(array $rules): ConfigInterface
     {
         return $this->setRules(array_merge(
             $this->getRules(),
@@ -84,7 +90,7 @@ class Config extends \PhpCsFixer\Config
         ));
     }
 
-    public function enablePhpunitRules(): self
+    public function enablePhpunitRules(): ConfigInterface
     {
         return $this->mergeRules([
             'php_unit_dedicate_assert' => true,
