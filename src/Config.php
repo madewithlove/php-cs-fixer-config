@@ -39,7 +39,7 @@ class Config extends \PhpCsFixer\Config
                 'no_empty_comment' => true,
                 'no_empty_phpdoc' => true,
                 'no_superfluous_phpdoc_tags' => true,
-                'no_trailing_comma_in_singleline_array' => true,
+                'no_trailing_comma_in_singleline' => true,
                 'no_unused_imports' => true,
                 'no_useless_return' => true,
                 'no_whitespace_before_comma_in_array' => true,
