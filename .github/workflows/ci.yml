@@ -8,6 +8,9 @@ jobs:
         strategy:
             matrix:
                 php-versions: ['7.4', '8.0', '8.1', '8.2']
+                include:
+                    - php-versions: 8.2
+                      PHP_CS_FIXER_IGNORE_ENV: 1
         name: PHP ${{ matrix.php-versions }}
         steps:
             - name: 📤 Checkout project
@@ -22,4 +25,6 @@ jobs:
               run: composer update --no-progress --no-interaction --prefer-dist
 
             - name: ✅ Run code style check
+              env:
+                  PHP_CS_FIXER_IGNORE_ENV: ${{ matrix.PHP_CS_FIXER_IGNORE_ENV }}
               run: composer check-linting
