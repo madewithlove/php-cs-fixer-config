@@ -1,8 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://semver.madewithlove.com">
-    <img src="https://static.madewithlove.com/logo/red/full.png" alt="madewithlove" width="400">
-  </a>
+  <img src="https://static.madewithlove.com/logo/red/full.png" alt="madewithlove" width="400">
   <br><br>
   madewithlove PHP-CS-Fixer configuration
   <br>
