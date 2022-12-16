@@ -16,7 +16,15 @@ The default [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) configu
 
 <div align="center">
 
-The default [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) configuration for Madewithlove projects. 
+![ci](https://github.com/madewithlove/php-cs-fixer-config/actions/workflows/ci.yml/badge.svg)
+[![pull requests](https://img.shields.io/github/issues-pr/madewithlove/php-cs-fixer-config)](https://github.com/madewithlove/php-cs-fixer-config/pulls)
+[![contributors](https://img.shields.io/github/contributors/madewithlove/php-cs-fixer-config)](https://github.com/madewithlove/php-cs-fixer-config/graphs/contributors)
+
+</div>
+
+<div align="center">
+  <sub>Built with :heart:︎ and :coffee: by heroes at <a href="https://madewithlove.com">madewithlove</a>.</sub>
+</div>
 
 ## Installation
 
