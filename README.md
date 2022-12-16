@@ -1,4 +1,20 @@
-# Madewithlove PHP-CS-Fixer configuration
+<h1 align="center">
+  <br>
+  <a href="https://semver.madewithlove.com">
+    <img src="https://static.madewithlove.com/logo/red/full.png" alt="madewithlove" width="400">
+  </a>
+  <br><br>
+  madewithlove PHP-CS-Fixer configuration
+  <br>
+</h1>
+
+<h4 align="center">
+
+The default [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) configuration for madewithlove projects. 
+
+</h4>
+
+<div align="center">
 
 The default [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) configuration for Madewithlove projects. 
 
